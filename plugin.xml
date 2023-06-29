@@ -13,8 +13,6 @@
         <hook type="before_build" src="hooks/minSDKVersionChangerAndroid.js" />
 
         <preference name="ANDROID_MIN_SDK_VERSION" default="24"/>
-
-        <dependency id="cordova.plugin.trapeze" url="https://github.com/agoncalvesos/cordova-plugin-trapeze#v1.1-OS" />
     </platform>
 
     <platform name="ios">
