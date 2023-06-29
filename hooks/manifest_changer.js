@@ -20,7 +20,7 @@ module.exports = function (context) {
       if (!manifestRoot['uses-sdk']) {
         manifestRoot['uses-sdk'] = [];
       }
-        usesSDK.forEach(use => manifestRoot['uses-sdk'].push({'$': {'tools:overrideLibrary': 'com.outsystems.plugins.keystore'}}));
+      manifestRoot['uses-sdk'].push({'$': {'tools:overrideLibrary': 'com.outsystems.plugins.keystore'}});
 
         fs.writeFileSync(manifestPath, builder.buildObject(manifest));
       }
