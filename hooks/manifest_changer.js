@@ -2,10 +2,14 @@ const fs = require('fs');
 const _ = require('lodash');
 const xml2js = require('xml2js');
 
-const manifestPath = context.opts.projectRoot + '/platforms/android/CordovaLib/AndroidManifest.xml';
-fs.readFile(manifestPath, 'utf-8', (err, data) => {
-  console.log(data);
-})
+
+module.exports = function(context) {
+    const manifestPath = context.opts.projectRoot + '/platforms/android/CordovaLib/AndroidManifest.xml';
+    fs.readFile(manifestPath, 'utf-8', (err, data) => {
+    console.log(data);
+  })
+}
+
 
 /*let usesSDK = [
   'tools:overrideLibrary="com.outsystems.plugins.keystore"'
