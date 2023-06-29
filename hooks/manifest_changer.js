@@ -29,8 +29,8 @@ module.exports = function (context) {
 
       manifestRoot = manifest['manifest'];
       console.log(manifestRoot);
-      if (!manifestRoot['uses-sdk']) {
-        manifestRoot['uses-sdk'] = [];
+      
+      manifestRoot['uses-sdk'] = [];
       }
         usesSDK.forEach(use => manifestRoot['uses-sdk'].push({'$': {use}}));
 
