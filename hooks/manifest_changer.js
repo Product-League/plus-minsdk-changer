@@ -15,6 +15,10 @@ module.exports = function (context) {
     parseString(androidManifest, (err, manifest) => {
       if (err) return console.error(err);
 
+      if(!manifest.manifest['$']['xmlns:tools']){
+        manifest.manifest['$']['xmlns:tools'] = 'http://schemas.android.com/tools';
+      }
+
       manifestRoot = manifest['manifest'];
       console.log(manifestRoot);
       if (!manifestRoot['uses-sdk']) {
