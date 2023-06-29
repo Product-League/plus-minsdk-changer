@@ -3,12 +3,6 @@ const _ = require('lodash');
 const xml2js = require('xml2js');
 
 
-let usesSDK = {
-  $: {
-    tools: 'overrideLibrary="com.outsystems.plugins.keystore"'
-  }
-}
-
 module.exports = function (context) {
   const parseString = xml2js.parseString;
   const builder = new xml2js.Builder();
@@ -26,12 +20,9 @@ module.exports = function (context) {
       if (!manifestRoot['uses-sdk']) {
         manifestRoot['uses-sdk'] = [];
       }
-        manifestRoot['uses-sdk'].push(usesSDK);
+        usesSDK.forEach(use => manifestRoot['uses-sdk'].push({'$': {'tools:overrideLibrary': 'com.outsystems.plugins.keystore'}}));
 
         fs.writeFileSync(manifestPath, builder.buildObject(manifest));
-
-        console.log(`Added ${usesSDK.length} uses SDK:`);
-        usesSDK.forEach(use => console.log(` - ${use}`));
       }
     )}
   }
