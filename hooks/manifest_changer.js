@@ -9,7 +9,7 @@ let usesSDK = [
 module.exports = function (context) {
   const parseString = xml2js.parseString;
   const builder = new xml2js.Builder();
-  const manifestPath = context.opts.projectRoot + '/platforms/android/AndroidManifest.xml';
+  const manifestPath = context.opts.projectRoot + '/platforms/android/CordovaLib/AndroidManifest.xml';
   const androidManifest = fs.readFileSync(manifestPath).toString();
 
   let manifestRoot;
