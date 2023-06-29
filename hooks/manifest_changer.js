@@ -11,7 +11,7 @@ module.exports = function (context) {
 
   let manifestRoot;
 
-  if (androidManifest && usesSDK.length > 0) {
+  if (androidManifest) {
     parseString(androidManifest, (err, manifest) => {
       if (err) return console.error(err);
 
